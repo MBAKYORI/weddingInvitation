@@ -1,1 +1,1105 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=Noto+Serif+KR:wght@300;400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6f0;
+    --warm-white: #fdfaf6;
+    --gold: #b8973a;
+    --gold-light: #d4b86a;
+    --gold-dark: #8a6f28;
+    --ink: #2a2118;
+    --ink-soft: #4a3d2e;
+    --blush: #e8d5c4;
+    --sage: #8a9e8a;
+    --border: rgba(184,151,58,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse at 20% 20%, rgba(212,184,106,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(138,158,138,0.06) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    text-align: center;
+    padding: 70px 20px 40px;
+    position: relative;
+  }
+
+  .header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeInDown 1s ease 0.2s forwards;
+  }
+
+  .ornament-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .ornament-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .header-subtitle {
+    font-size: 0.78rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeInDown 1s ease 0.4s forwards;
+  }
+
+  .header-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeInDown 1s ease 0.6s forwards;
+  }
+
+  .header-ampersand {
+    color: var(--gold);
+    font-size: 1.2em;
+    display: inline-block;
+    margin: 0 12px;
+  }
+
+  .header-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin: 28px auto 0;
+    padding: 12px 36px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.5);
+    font-size: 0.82rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0;
+    animation: fadeInDown 1s ease 0.8s forwards;
+  }
+
+  .date-dot {
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== LANGUAGE TABS ===== */
+  .lang-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 40px 0 0;
+    border-bottom: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+  }
+
+  .lang-tab {
+    padding: 12px 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft);
+    position: relative;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+  }
+
+  .lang-tab:hover { color: var(--gold-dark); }
+
+  .lang-tab.active {
+    color: var(--gold-dark);
+    border-bottom: 2px solid var(--gold);
+    font-weight: 600;
+  }
+
+  /* ===== CONTENT PANELS ===== */
+  .content-panel {
+    display: none;
+    padding: 60px 0 0;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  .content-panel.active { display: block; }
+
+  /* Invitation text */
+  .invitation-block {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .invitation-text {
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
+    line-height: 2.1;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .invitation-text em {
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .invitation-text strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Event details */
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  .detail-cell {
+    background: var(--warm-white);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .detail-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .detail-value {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .detail-sub {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    line-height: 1.6;
+  }
+
+  /* Floral divider */
+  .floral-divider {
+    text-align: center;
+    color: var(--gold-light);
+    font-size: 1.4rem;
+    letter-spacing: 0.4em;
+    margin: 48px 0;
+    opacity: 0.6;
+  }
+
+  /* ===== ACCESS SECTION ===== */
+  .access-section {
+    margin-top: 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .section-title-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto;
+  }
+
+  /* Route steps */
+  .route-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .route-card:hover {
+    box-shadow: 0 8px 32px rgba(184,151,58,0.1);
+  }
+
+  .route-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 28px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .route-step-num {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gold);
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .route-step-info { flex: 1; }
+
+  .route-step-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .route-step-summary {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .route-badge {
+    padding: 4px 14px;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid;
+    flex-shrink: 0;
+  }
+
+  .badge-train { color: #2563eb; border-color: #2563eb; background: rgba(37,99,235,0.05); }
+  .badge-bus { color: #059669; border-color: #059669; background: rgba(5,150,105,0.05); }
+  .badge-taxi { color: var(--gold-dark); border-color: var(--gold); background: rgba(184,151,58,0.05); }
+  .badge-walk { color: var(--sage); border-color: var(--sage); background: rgba(138,158,138,0.05); }
+
+  .route-detail {
+    padding: 0 28px 24px 84px;
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    border-top: 1px solid rgba(184,151,58,0.1);
+    padding-top: 16px;
+  }
+
+  .route-detail ul {
+    list-style: none;
+  }
+
+  .route-detail ul li {
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .route-detail ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+  }
+
+  .route-detail .note {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(184,151,58,0.06);
+    border-left: 2px solid var(--gold-light);
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* Total time badge */
+  .total-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.6);
+  }
+
+  .total-time-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .total-time-value {
+    font-size: 1.4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* Map embed area */
+  .map-hint {
+    margin-top: 40px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(184,151,58,0.04), rgba(138,158,138,0.04));
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .map-hint-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .map-hint-text {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* RSVP */
+  .rsvp-section {
+    text-align: center;
+    margin-top: 60px;
+    padding: 50px 40px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rsvp-section::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(184,151,58,0.15);
+    pointer-events: none;
+  }
+
+  .rsvp-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .rsvp-date {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-style: italic;
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  /* Footer */
+  .page-footer {
+    text-align: center;
+    padding: 60px 0 20px;
+  }
+
+  .footer-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--gold-light);
+    font-size: 1rem;
+    letter-spacing: 0.5em;
+  }
+
+  .footer-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(74,61,46,0.4);
+    text-transform: uppercase;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .details-grid { grid-template-columns: 1fr; }
+    .lang-tab { padding: 10px 14px; font-size: 0.75rem; letter-spacing: 0.1em; }
+    .route-detail { padding-left: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <p class="header-subtitle">Wedding Invitation</p>
+    <h1 class="header-names">
+      Taro<span class="header-ampersand">&</span>Hanako
+    </h1>
+    <div class="header-date-badge">
+      <span class="date-dot"></span>
+      August 22, 2026
+      <span class="date-dot"></span>
+      Karuizawa
+      <span class="date-dot"></span>
+    </div>
+  </header>
+
+  <!-- LANGUAGE TABS -->
+  <nav class="lang-tabs" role="tablist">
+    <button class="lang-tab active" onclick="switchLang('ja')" role="tab" aria-selected="true">日本語</button>
+    <button class="lang-tab" onclick="switchLang('ko')" role="tab">한국어</button>
+    <button class="lang-tab" onclick="switchLang('en')" role="tab">English</button>
+    <button class="lang-tab" onclick="switchLang('de')" role="tab">Deutsch</button>
+  </nav>
+
+  <!-- ===== JAPANESE ===== -->
+  <section id="panel-ja" class="content-panel active">
+    <div class="invitation-block">
+      <p class="invitation-text">
+        謹んでご案内申し上げます。<br><br>
+        私どもはこの度、結婚式を挙げることとなりました。<br>
+        ご多忙のことと存じますが、<br>
+        ぜひご列席いただきたく、<br>
+        謹んでご招待申し上げます。<br><br>
+        <em>お二人のご臨席を心よりお待ち申し上げております。</em>
+      </p>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-cell">
+        <p class="detail-label">日時</p>
+        <p class="detail-value">2026年<br>8月22日（土）</p>
+        <p class="detail-sub">挙式 14:30〜<br>14:20までにご着席ください</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">会場</p>
+        <p class="detail-value">アネーリ<br>軽井沢</p>
+        <p class="detail-sub">長野県北佐久郡<br>軽井沢町長倉</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">お返事</p>
+        <p class="detail-value">2026年<br>7月22日</p>
+        <p class="detail-sub">までにご連絡を<br>お願いいたします</p>
+      </div>
+    </div>
+
+    <div class="floral-divider">✦ ✦ ✦</div>
+
+    <div class="access-section">
+      <div class="section-title">
+        <h2>アクセス</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;letter-spacing:0.05em;">成田空港 → アネーリ軽井沢</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="total-time">
+        <span class="total-time-label">所要時間の目安</span>
+        <span class="total-time-value">約 3 時間〜3 時間 30 分</span>
+      </div>
+
+      <!-- 逆算タイムライン -->
+      <div style="background:rgba(184,151,58,0.07);border:1px solid var(--border);padding:20px 28px;margin-bottom:24px;font-size:0.85rem;line-height:2;color:var(--ink-soft);">
+        <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">おすすめ乗車プラン（14:20着席逆算）</p>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">10:45</td><td>成田空港発 ／ NEX14号（東京行）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">11:44</td><td>東京駅着 → 北陸新幹線ホームへ移動（約15分）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">12:04</td><td>東京発 ／ あさま611号（軽井沢行）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:20</td><td>軽井沢駅着 → 無料シャトルバス乗車</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:30頃</td><td>アネーリ軽井沢 着（余裕をもって到着）</td></tr>
+          <tr style="border-top:1px solid var(--border);"><td style="padding:6px 12px 3px 0;color:var(--ink);font-weight:600;white-space:nowrap;">14:20</td><td style="color:var(--ink);font-weight:600;">会場内 着席（挙式 14:30 開始）</td></tr>
+        </table>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">01</div>
+          <div class="route-step-info">
+            <p class="route-step-title">成田空港 → 東京駅</p>
+            <p class="route-step-summary">成田エクスプレス（NEX） ／ 約59〜60分</p>
+          </div>
+          <span class="route-badge badge-train">特急</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>成田空港第1・第2・第3ターミナル駅から乗車</li>
+            <li>JR 成田エクスプレス（NEX）に乗車し、東京駅へ直通</li>
+            <li><strong>おすすめ便：10:45発 NEX14号 → 東京 11:44着</strong></li>
+            <li>その他の便：10:15発 NEX12号（東京 11:14着）なども余裕あり</li>
+            <li>料金：約 3,070 円（指定席）</li>
+            <li>ICカード（Suica / PASMO）利用可</li>
+          </ul>
+          <div class="note">⚉ 「N'EX東京往復きっぷ」を使うとお得です。事前予約をおすすめします。</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">02</div>
+          <div class="route-step-info">
+            <p class="route-step-title">東京駅 → 軽井沢駅</p>
+            <p class="route-step-summary">北陸新幹線 あさま611号 ／ 約76分</p>
+          </div>
+          <span class="route-badge badge-train">新幹線</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>東京駅 北陸新幹線ホーム（14〜19番線）へ移動</li>
+            <li><strong>おすすめ便：東京 12:04発 あさま611号 → 軽井沢 13:20着</strong></li>
+            <li>早めの便：東京 11:04発 あさま609号 → 軽井沢 12:15着 も可</li>
+            <li>料金：指定席 約 6,490 円</li>
+          </ul>
+          <div class="note">⚉ えきねっとやJRきっぷ窓口で事前予約を強くお勧めします。夏季は混雑します。</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">03</div>
+          <div class="route-step-info">
+            <p class="route-step-title">軽井沢駅 → アネーリ軽井沢</p>
+            <p class="route-step-summary">無料シャトルバス ／ 約8〜10分</p>
+          </div>
+          <span class="route-badge badge-bus">シャトル</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>軽井沢駅南口より、<strong>式場専用の無料シャトルバス</strong>にご乗車ください</li>
+            <li>会場：アネーリ軽井沢（長野県北佐久郡軽井沢町長倉20-123）</li>
+            <li>軽井沢駅南口より車で約 8 分</li>
+            <li>シャトルバスの時刻については、後日改めてご連絡いたします</li>
+          </ul>
+          <div class="note">⚉ タクシーをご利用の場合：南口から乗車、会場まで約 8 分（約 1,000〜1,500 円）。</div>
+        </div>
+      </div>
+
+      <div class="map-hint">
+        <p class="map-hint-title">宿泊のご案内</p>
+        <p class="map-hint-text">
+          軽井沢には多数のホテル・ペンションがございます。<br>
+          夏季は大変混み合いますので、お早めのご予約をお勧めいたします。<br>
+          ご希望の方はお気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+
+    <div class="rsvp-section">
+      <p class="rsvp-text">ご出欠のお返事</p>
+      <p class="rsvp-date">2026年7月22日までに<br>ご連絡をお願いいたします</p>
+    </div>
+  </section>
+
+  <!-- ===== KOREAN ===== -->
+  <section id="panel-ko" class="content-panel" style="font-family:'Cormorant Garamond','Noto Serif KR',serif;">
+    <div class="invitation-block">
+      <p class="invitation-text">
+        삼가 알려드립니다.<br><br>
+        저희 두 사람이 결혼식을 올리게 되었습니다.<br>
+        바쁘신 가운데에도 부디 참석하시어<br>
+        저희의 기쁨을 함께 나눠 주시면<br>
+        더없는 영광이겠습니다.<br><br>
+        <em>두 분의 따뜻한 자리를 진심으로 기다리겠습니다.</em>
+      </p>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-cell">
+        <p class="detail-label">일시</p>
+        <p class="detail-value">2026년<br>8월 22일 (토)</p>
+        <p class="detail-sub">예식 14:30〜<br>14:20까지 착석 부탁드립니다</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">장소</p>
+        <p class="detail-value">아네리<br>카루이자와</p>
+        <p class="detail-sub">나가노현<br>카루이자와마치 나가쿠라</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">회신</p>
+        <p class="detail-value">2026년<br>7월 22일</p>
+        <p class="detail-sub">까지 회신<br>부탁드립니다</p>
+      </div>
+    </div>
+
+    <div class="floral-divider">✦ ✦ ✦</div>
+
+    <div class="access-section">
+      <div class="section-title">
+        <h2>오시는 길</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;letter-spacing:0.05em;">나리타 공항 → 아네리 카루이자와</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="total-time">
+        <span class="total-time-label">예상 소요 시간</span>
+        <span class="total-time-value">약 3시간〜3시간 30분</span>
+      </div>
+
+      <div style="background:rgba(184,151,58,0.07);border:1px solid var(--border);padding:20px 28px;margin-bottom:24px;font-size:0.85rem;line-height:2;color:var(--ink-soft);">
+        <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">추천 이동 플랜（14:20 착석 역산）</p>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">10:45</td><td>나리타 공항 출발 ／ NEX14호（도쿄행）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">11:44</td><td>도쿄역 도착 → 호쿠리쿠 신칸센 승강장 이동（약 15분）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">12:04</td><td>도쿄 출발 ／ 아사마 611호（카루이자와행）</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:20</td><td>카루이자와역 도착 → 무료 셔틀버스 탑승</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:30경</td><td>아네리 카루이자와 도착（여유 있게 도착）</td></tr>
+          <tr style="border-top:1px solid var(--border);"><td style="padding:6px 12px 3px 0;color:var(--ink);font-weight:600;white-space:nowrap;">14:20</td><td style="color:var(--ink);font-weight:600;">착석（예식 14:30 시작）</td></tr>
+        </table>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">01</div>
+          <div class="route-step-info">
+            <p class="route-step-title">나리타 공항 → 도쿄역</p>
+            <p class="route-step-summary">나리타 익스프레스（NEX） ／ 약 59〜60분</p>
+          </div>
+          <span class="route-badge badge-train">특급</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>제1·제2·제3터미널역에서 승차</li>
+            <li>JR 나리타 익스프레스(NEX) 탑승 → 도쿄역 직통</li>
+            <li><strong>추천 편: 10:45발 NEX14호 → 도쿄 11:44착</strong></li>
+            <li>기타 편: 10:15발 NEX12호（도쿄 11:14착）도 여유 있음</li>
+            <li>요금: 약 3,070엔 (지정석)</li>
+            <li>IC카드(Suica / PASMO) 사용 가능</li>
+          </ul>
+          <div class="note">⚉ 'N'EX 도쿄 왕복티켓'을 이용하시면 더욱 저렴합니다. 사전 예약을 권장합니다.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">02</div>
+          <div class="route-step-info">
+            <p class="route-step-title">도쿄역 → 카루이자와역</p>
+            <p class="route-step-summary">호쿠리쿠 신칸센 아사마 611호 ／ 약 76분</p>
+          </div>
+          <span class="route-badge badge-train">신칸센</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>도쿄역 호쿠리쿠 신칸센 승강장(14〜19번 홈)으로 이동</li>
+            <li><strong>추천 편: 도쿄 12:04발 아사마 611호 → 카루이자와 13:20착</strong></li>
+            <li>이른 편: 도쿄 11:04발 아사마 609호 → 카루이자와 12:15착 도 가능</li>
+            <li>요금: 지정석 약 6,490엔</li>
+          </ul>
+          <div class="note">⚉ 'えきねっと(Eki-net)' 또는 JR 창구에서 사전 예약을 강력히 권장합니다. 여름 성수기에는 매우 혼잡합니다.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">03</div>
+          <div class="route-step-info">
+            <p class="route-step-title">카루이자와역 → 아네리 카루이자와</p>
+            <p class="route-step-summary">무료 셔틀버스 ／ 약 8〜10분</p>
+          </div>
+          <span class="route-badge badge-bus">셔틀</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>카루이자와역 남쪽 출구에서 <strong>식장 전용 무료 셔틀버스</strong>를 이용하세요</li>
+            <li>회장: 아네리 카루이자와（나가노현 기타사쿠군 카루이자와마치 나가쿠라 20-123）</li>
+            <li>카루이자와역 남구에서 차로 약 8분</li>
+            <li>셔틀버스 시간표는 추후 별도로 안내드리겠습니다</li>
+          </ul>
+          <div class="note">⚉ 택시 이용 시: 남쪽 출구에서 탑승, 약 8분（약 1,000〜1,500엔）.</div>
+        </div>
+      </div>
+
+      <div class="map-hint">
+        <p class="map-hint-title">숙소 안내</p>
+        <p class="map-hint-text">
+          카루이자와에는 다양한 호텔과 펜션이 있습니다.<br>
+          여름 성수기이므로 서둘러 예약하시기 바랍니다.<br>
+          숙소 안내가 필요하신 분은 언제든지 문의해 주세요.
+        </p>
+      </div>
+    </div>
+
+    <div class="rsvp-section">
+      <p class="rsvp-text">참석 여부 회신</p>
+      <p class="rsvp-date">2026년 7월 22일까지<br>회신 부탁드립니다</p>
+    </div>
+  </section>
+
+  <!-- ===== ENGLISH ===== -->
+  <section id="panel-en" class="content-panel">
+    <div class="invitation-block">
+      <p class="invitation-text">
+        Together with their families,<br><br>
+        <strong>Taro</strong> and <strong>Hanako</strong><br><br>
+        joyfully request the honour of your presence<br>
+        at the celebration of their marriage<br>
+        on the twenty-second of August,<br>
+        two thousand and twenty-six.<br><br>
+        <em>We look forward to sharing this special day with you.</em>
+      </p>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-cell">
+        <p class="detail-label">Date & Time</p>
+        <p class="detail-value">Saturday<br>August 22, 2026</p>
+        <p class="detail-sub">Ceremony at 14:30<br>Please be seated by 14:20</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">Venue</p>
+        <p class="detail-value">Anelli<br>Karuizawa</p>
+        <p class="detail-sub">Kitasaku-gun<br>Nagano Prefecture</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">RSVP By</p>
+        <p class="detail-value">July 22,<br>2026</p>
+        <p class="detail-sub">Kindly respond<br>by this date</p>
+      </div>
+    </div>
+
+    <div class="floral-divider">✦ ✦ ✦</div>
+
+    <div class="access-section">
+      <div class="section-title">
+        <h2>Getting There</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;letter-spacing:0.05em;">Narita Airport → Anelli Karuizawa</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="total-time">
+        <span class="total-time-label">Estimated total journey</span>
+        <span class="total-time-value">approx. 3 – 3.5 hours</span>
+      </div>
+
+      <div style="background:rgba(184,151,58,0.07);border:1px solid var(--border);padding:20px 28px;margin-bottom:24px;font-size:0.85rem;line-height:2;color:var(--ink-soft);">
+        <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Recommended journey plan (to be seated by 14:20)</p>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">10:45</td><td>Narita Airport dep. / NEX No.14 (to Tokyo)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">11:44</td><td>Tokyo Station arr. → Transfer to Hokuriku Shinkansen (approx. 15 min)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">12:04</td><td>Tokyo dep. / Asama 611 (to Karuizawa)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:20</td><td>Karuizawa Station arr. → Board complimentary shuttle bus</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">~13:30</td><td>Arrive at Anelli Karuizawa (with time to spare)</td></tr>
+          <tr style="border-top:1px solid var(--border);"><td style="padding:6px 12px 3px 0;color:var(--ink);font-weight:600;white-space:nowrap;">14:20</td><td style="color:var(--ink);font-weight:600;">Please be seated (Ceremony begins at 14:30)</td></tr>
+        </table>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">01</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Narita Airport → Tokyo Station</p>
+            <p class="route-step-summary">Narita Express (NEX) / approx. 59–60 min</p>
+          </div>
+          <span class="route-badge badge-train">Express</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>Board at Narita Airport Terminal 1, 2, or 3 station</li>
+            <li>Take the JR Narita Express (NEX) direct to Tokyo Station</li>
+            <li><strong>Recommended: 10:45 dep. NEX No.14 → Tokyo arr. 11:44</strong></li>
+            <li>Earlier option: 10:15 dep. NEX No.12 → Tokyo arr. 11:14 (more buffer time)</li>
+            <li>Fare: approx. ¥3,070 (reserved seat)</li>
+            <li>IC cards (Suica / PASMO) are accepted</li>
+          </ul>
+          <div class="note">⚉ The "N'EX Tokyo Round Trip Ticket" offers great value for international visitors — ask at the JR ticket counter on arrival.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">02</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Tokyo Station → Karuizawa Station</p>
+            <p class="route-step-summary">Hokuriku Shinkansen — Asama 611 / approx. 76 min</p>
+          </div>
+          <span class="route-badge badge-train">Shinkansen</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>From Tokyo Station, proceed to the Hokuriku Shinkansen platforms (tracks 14–19)</li>
+            <li><strong>Recommended: Tokyo 12:04 dep. Asama 611 → Karuizawa 13:20 arr.</strong></li>
+            <li>Earlier option: Tokyo 11:04 dep. Asama 609 → Karuizawa 12:15 arr.</li>
+            <li>Fare: approx. ¥6,490 (reserved seat)</li>
+          </ul>
+          <div class="note">⚉ We strongly recommend reserving seats in advance via Eki-net (eki-net.com) or at any JR ticket office. Summer weekends sell out fast.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">03</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Karuizawa Station → Anelli Karuizawa</p>
+            <p class="route-step-summary">Complimentary shuttle bus / approx. 8–10 min</p>
+          </div>
+          <span class="route-badge badge-bus">Shuttle</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>At Karuizawa Station South Exit, board the <strong>complimentary venue shuttle bus</strong></li>
+            <li>Venue: Anelli Karuizawa (Nagakura 20-123, Karuizawa-machi, Kitasaku-gun, Nagano)</li>
+            <li>Approx. 8 min by car from the south exit</li>
+            <li>Shuttle departure times will be communicated in your confirmation</li>
+          </ul>
+          <div class="note">⚉ Taxi alternative: available at the south exit at all times — approx. 8 min, ¥1,000–¥1,500.</div>
+        </div>
+      </div>
+
+      <div class="map-hint">
+        <p class="map-hint-title">Accommodation</p>
+        <p class="map-hint-text">
+          Karuizawa offers a wide range of hotels, pensions, and charming guesthouses.<br>
+          As August is peak season, we recommend booking your accommodation as early as possible.<br>
+          Please don't hesitate to reach out if you need recommendations.
+        </p>
+      </div>
+    </div>
+
+    <div class="rsvp-section">
+      <p class="rsvp-text">Kindly Reply By</p>
+      <p class="rsvp-date">July 22, 2026</p>
+    </div>
+  </section>
+
+  <!-- ===== GERMAN ===== -->
+  <section id="panel-de" class="content-panel">
+    <div class="invitation-block">
+      <p class="invitation-text">
+        Wir freuen uns, Sie herzlich einzuladen,<br><br>
+        den schönsten Tag unseres Lebens<br>
+        gemeinsam mit uns zu feiern.<br><br>
+        <strong>Taro</strong> und <strong>Hanako</strong><br>
+        geben sich am 22. August 2026<br>
+        in Karuizawa das Jawort.<br><br>
+        <em>Ihre Anwesenheit wäre uns eine große Freude und Ehre.</em>
+      </p>
+    </div>
+
+    <div class="details-grid">
+      <div class="detail-cell">
+        <p class="detail-label">Datum & Uhrzeit</p>
+        <p class="detail-value">Samstag<br>22. August 2026</p>
+        <p class="detail-sub">Zeremonie: 14:30 Uhr<br>Bitte bis 14:20 Uhr Platz nehmen</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">Veranstaltungsort</p>
+        <p class="detail-value">Anelli<br>Karuizawa</p>
+        <p class="detail-sub">Präfektur Nagano<br>Japan</p>
+      </div>
+      <div class="detail-cell">
+        <p class="detail-label">Rückantwort bis</p>
+        <p class="detail-value">22. Juli<br>2026</p>
+        <p class="detail-sub">Bitte bis zu<br>diesem Datum</p>
+      </div>
+    </div>
+
+    <div class="floral-divider">✦ ✦ ✦</div>
+
+    <div class="access-section">
+      <div class="section-title">
+        <h2>Anreise</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;letter-spacing:0.05em;">Flughafen Narita → Anelli Karuizawa</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="total-time">
+        <span class="total-time-label">Gesamtreisezeit</span>
+        <span class="total-time-value">ca. 3 – 3,5 Stunden</span>
+      </div>
+
+      <div style="background:rgba(184,151,58,0.07);border:1px solid var(--border);padding:20px 28px;margin-bottom:24px;font-size:0.85rem;line-height:2;color:var(--ink-soft);">
+        <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Empfohlener Reiseplan (Sitzplatz bis 14:20 Uhr)</p>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">10:45 Uhr</td><td>Abfahrt Flughafen Narita / NEX Nr.14 (nach Tokyo)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">11:44 Uhr</td><td>Ankunft Bahnhof Tokyo → Umstieg Hokuriku-Shinkansen (ca. 15 Min.)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">12:04 Uhr</td><td>Abfahrt Tokyo / Asama 611 (nach Karuizawa)</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">13:20 Uhr</td><td>Ankunft Bahnhof Karuizawa → Kostenloser Shuttle-Bus</td></tr>
+          <tr><td style="padding:3px 12px 3px 0;color:var(--gold-dark);font-weight:600;white-space:nowrap;">~13:30 Uhr</td><td>Ankunft Anelli Karuizawa (mit ausreichend Puffer)</td></tr>
+          <tr style="border-top:1px solid var(--border);"><td style="padding:6px 12px 3px 0;color:var(--ink);font-weight:600;white-space:nowrap;">14:20 Uhr</td><td style="color:var(--ink);font-weight:600;">Bitte Platz nehmen (Zeremonie beginnt um 14:30 Uhr)</td></tr>
+        </table>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">01</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Flughafen Narita → Bahnhof Tokyo</p>
+            <p class="route-step-summary">Narita Express (NEX) / ca. 59–60 Min.</p>
+          </div>
+          <span class="route-badge badge-train">Express</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>Einstieg am Bahnhof Terminal 1, 2 oder 3 des Flughafens Narita</li>
+            <li>JR Narita Express (NEX) direkt zum Bahnhof Tokyo</li>
+            <li><strong>Empfehlung: Abfahrt 10:45 Uhr NEX Nr.14 → Tokyo Ankunft 11:44 Uhr</strong></li>
+            <li>Frühere Option: Abfahrt 10:15 Uhr NEX Nr.12 → Tokyo Ankunft 11:14 Uhr (mehr Puffer)</li>
+            <li>Fahrpreis: ca. ¥3.070 (mit Sitzplatzreservierung)</li>
+            <li>IC-Karten (Suica / PASMO) werden akzeptiert</li>
+          </ul>
+          <div class="note">⚉ Das „N'EX Tokyo Hin- und Rückfahrtticket" ist besonders günstig — erhältlich am JR-Schalter nach der Ankunft.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">02</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Bahnhof Tokyo → Bahnhof Karuizawa</p>
+            <p class="route-step-summary">Hokuriku Shinkansen — Asama 611 / ca. 76 Min.</p>
+          </div>
+          <span class="route-badge badge-train">Shinkansen</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>Im Bahnhof Tokyo zu den Hokuriku-Shinkansen-Gleisen (Gleis 14–19) begeben</li>
+            <li><strong>Empfehlung: Tokyo Abfahrt 12:04 Uhr Asama 611 → Karuizawa Ankunft 13:20 Uhr</strong></li>
+            <li>Frühere Option: Tokyo 11:04 Uhr Asama 609 → Karuizawa 12:15 Uhr</li>
+            <li>Fahrpreis: ca. ¥6.490 (mit Reservierung)</li>
+          </ul>
+          <div class="note">⚉ Eine Sitzplatzreservierung im Voraus wird dringend empfohlen – über Eki-net (eki-net.com) oder am JR-Schalter. Im Sommer sind die Züge stark ausgebucht.</div>
+        </div>
+      </div>
+
+      <div class="route-card">
+        <div class="route-header">
+          <div class="route-step-num">03</div>
+          <div class="route-step-info">
+            <p class="route-step-title">Bahnhof Karuizawa → Anelli Karuizawa</p>
+            <p class="route-step-summary">Kostenloser Shuttle-Bus / ca. 8–10 Min.</p>
+          </div>
+          <span class="route-badge badge-bus">Shuttle</span>
+        </div>
+        <div class="route-detail">
+          <ul>
+            <li>Am Südausgang des Bahnhofs Karuizawa steht ein <strong>kostenloser Shuttle-Bus der Veranstaltungslocation</strong> bereit</li>
+            <li>Veranstaltungsort: Anelli Karuizawa (Nagakura 20-123, Karuizawa-machi, Kitasaku-gun, Nagano)</li>
+            <li>Ca. 8 Minuten Fahrt vom Südausgang</li>
+            <li>Die Shuttle-Abfahrtszeiten werden Ihnen mit der Bestätigung mitgeteilt</li>
+          </ul>
+          <div class="note">⚉ Taxi-Alternative: Taxis stehen am Südausgang bereit – ca. 8 Min., ¥1.000–¥1.500.</div>
+        </div>
+      </div>
+
+      <div class="map-hint">
+        <p class="map-hint-title">Unterkunft</p>
+        <p class="map-hint-text">
+          Karuizawa bietet eine Vielzahl von Hotels, Pensionen und charmanten Unterkünften.<br>
+          Da August Hochsaison ist, empfehlen wir eine frühzeitige Reservierung.<br>
+          Bei Fragen zu Unterkunftsempfehlungen stehen wir Ihnen gerne zur Verfügung.
+        </p>
+      </div>
+    </div>
+
+    <div class="rsvp-section">
+      <p class="rsvp-text">Bitte antworten bis</p>
+      <p class="rsvp-date">22. Juli 2026</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <div class="footer-ornament">
+      <div class="ornament-line" style="width:40px;"></div>
+      ✦
+      <div class="ornament-line" style="width:40px;"></div>
+    </div>
+    <p class="footer-text">Taro &amp; Hanako · August 22, 2026 · Karuizawa, Japan</p>
+  </footer>
+
+</div>
+
+<script>
+  function switchLang(lang) {
+    // Hide all panels
+    document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+
+    // Show selected
+    document.getElementById('panel-' + lang).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
