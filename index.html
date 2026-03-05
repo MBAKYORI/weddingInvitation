@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -496,11 +495,168 @@
     to { opacity: 1; }
   }
 
+  /* ===== SCHEDULE SECTION ===== */
+  .schedule-section {
+    margin-top: 60px;
+  }
+
+  .schedule-timeline {
+    position: relative;
+    margin-top: 36px;
+  }
+
+  .schedule-timeline::before {
+    content: '';
+    position: absolute;
+    left: 54px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold-light) 10%, var(--gold-light) 90%, transparent);
+  }
+
+  .schedule-item {
+    display: flex;
+    gap: 0;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .schedule-time-col {
+    width: 110px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 18px;
+  }
+
+  .schedule-time {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .schedule-dot-col {
+    width: 22px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 22px;
+  }
+
+  .schedule-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--warm-white);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .schedule-dot.highlight {
+    background: var(--gold);
+    width: 12px;
+    height: 12px;
+    margin-top: -1px;
+  }
+
+  .schedule-content {
+    flex: 1;
+    padding: 12px 0 12px 20px;
+    background: transparent;
+  }
+
+  .schedule-item:hover .schedule-content-inner {
+    background: rgba(184,151,58,0.04);
+  }
+
+  .schedule-content-inner {
+    padding: 14px 20px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    border-radius: 0;
+  }
+
+  .schedule-item.is-highlight .schedule-content-inner {
+    border-color: var(--border);
+    background: var(--warm-white);
+  }
+
+  .schedule-event-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.4;
+  }
+
+  .schedule-item.is-highlight .schedule-event-title {
+    color: var(--gold-dark);
+    font-size: 1.12rem;
+  }
+
+  .schedule-event-desc {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin-top: 6px;
+  }
+
+  .schedule-event-desc ul {
+    list-style: none;
+    margin-top: 4px;
+  }
+
+  .schedule-event-desc ul li {
+    padding-left: 18px;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .schedule-event-desc ul li::before {
+    content: '◇';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 0.65rem;
+    top: 4px;
+  }
+
+  .schedule-icon {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 0.95rem;
+  }
+
+  .schedule-end-marker {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 16px 20px 16px 132px;
+    background: rgba(184,151,58,0.06);
+    border: 1px solid var(--border);
+  }
+
+  .schedule-end-text {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
   /* Responsive */
   @media (max-width: 600px) {
     .details-grid { grid-template-columns: 1fr; }
     .lang-tab { padding: 10px 14px; font-size: 0.75rem; letter-spacing: 0.1em; }
     .route-detail { padding-left: 28px; }
+    .schedule-timeline::before { left: 44px; }
+    .schedule-time-col { width: 90px; }
+    .schedule-end-marker { padding-left: 28px; }
   }
 </style>
 </head>
@@ -665,7 +821,149 @@
       </div>
     </div>
 
-    <div class="rsvp-section">
+    <div class="floral-divider" style="margin-top:60px;">✦ ✦ ✦</div>
+
+    <div class="schedule-section">
+      <div class="section-title">
+        <h2>当日のスケジュール</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;">2026年8月22日（土）</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="schedule-timeline">
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">到着後</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎩</span>受付・ご祝儀</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>会場に到着したら、まず入口の<strong>受付カウンター</strong>へお越しください</li>
+                  <li>スタッフにお名前をお伝えいただき、<strong>ご祝儀袋</strong>をお渡しください</li>
+                  <li>ご祝儀の目安：20,000〜30,000円程度（ご友人・同僚の場合）</li>
+                  <li>ご祝儀袋は事前にコンビニ・文具店などでご購入いただけます</li>
+                  <li>袋の表書きには「寿」または「御祝」とご記入ください</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">〜14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🥂</span>ウェルカムドリンク＆待機</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>受付後は<strong>待合室</strong>にてお寛ぎください</li>
+                  <li>ウェルカムドリンク（スパークリングワイン・ソフトドリンクなど）をご用意しております</li>
+                  <li>お席でゆっくりとお待ちください</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">⛪</span>チャペルへのご案内</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>14:20頃、<strong>係の者がお声がけ</strong>いたします</li>
+                  <li>スタッフの誘導に従い、チャペルへご移動ください</li>
+                  <li>挙式開始前に、ご指定の席へお着席ください</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">💒</span>挙式</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>チャペルにて挙式を執り行います（約30〜40分）</li>
+                  <li>式の途中での入退場はご遠慮ください</li>
+                  <li>写真撮影は式後にセレモニーが設けられております</li>
+                  <li>チャペル内での撮影ルールはスタッフの指示に従ってください</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">15:10頃</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🚶</span>披露宴会場へ移動</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>挙式終了後、スタッフの誘導で披露宴会場へご移動ください</li>
+                  <li>この間、フォトセッション（集合写真など）が行われる場合があります</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">15:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🍽️</span>披露宴</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li><strong>お名前が書かれた席札</strong>のお席へお座りください</li>
+                  <li><strong>コース料理</strong>が順番にお席へ運ばれてきます</li>
+                  <li>テーブルにある<strong>ドリンクメニューは飲み放題</strong>です。スタッフにお気軽にお声がけください</li>
+                  <li>アルコール・ノンアルコールともにご用意しております</li>
+                  <li>ご歓談、スピーチ、余興などをお楽しみください</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">18:00</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎊</span>お開き・お見送り</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>18:00頃に披露宴終了となります</li>
+                  <li>出口にて新郎新婦がお見送りをいたします。どうぞお声がけください</li>
+                  <li>お引き出物（お土産）をお持ちくださいませ</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="schedule-end-marker">
+        <span class="schedule-icon" style="font-size:1.1rem;">🚌</span>
+        <span class="schedule-end-text">終了後、<strong>無料シャトルバス</strong>で軽井沢駅までお送りします。出発時刻は当日ご案内いたします。</span>
+      </div>
+    </div>
+
+    <div class="rsvp-section" style="margin-top:60px;">
       <p class="rsvp-text">ご出欠のお返事</p>
       <p class="rsvp-date">2026年7月22日までに<br>ご連絡をお願いいたします</p>
     </div>
@@ -800,13 +1098,151 @@
       </div>
     </div>
 
-    <div class="rsvp-section">
+    <div class="floral-divider" style="margin-top:60px;">✦ ✦ ✦</div>
+
+    <div class="schedule-section">
+      <div class="section-title">
+        <h2>당일 일정</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;">2026년 8월 22일 (토)</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="schedule-timeline">
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">도착 후</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎩</span>접수 및 축의금 전달</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>도착 후, 먼저 입구의 <strong>접수 카운터</strong>로 오세요</li>
+                  <li>스태프에게 성함을 말씀하시고 <strong>축의금 봉투</strong>를 전달해 주세요</li>
+                  <li>축의금 봉투는 편의점·문구점에서 구입 가능합니다</li>
+                  <li>봉투 앞면에 한국식으로 이름을 적어 주시면 됩니다</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">〜14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🥂</span>웰컴 드링크 &amp; 대기</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>접수 후 <strong>대기실</strong>에서 편안히 기다려 주세요</li>
+                  <li>웰컴 드링크（스파클링 와인·소프트드링크 등）를 즐기실 수 있습니다</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">⛪</span>채플로 이동</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>14:20경 <strong>담당 스태프가 안내</strong>해 드립니다</li>
+                  <li>스태프의 안내에 따라 채플로 이동해 주세요</li>
+                  <li>지정된 좌석에 착석해 주세요</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">💒</span>결혼식 (挙式)</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>채플에서 결혼식을 올립니다 (약 30〜40분)</li>
+                  <li>일본식 결혼식은 신성한 분위기로 진행됩니다</li>
+                  <li>식 도중 입퇴장은 삼가 주세요</li>
+                  <li>사진 촬영은 스태프의 안내에 따라 주세요</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">15:10경</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🚶</span>피로연 회장으로 이동</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>식 종료 후, 스태프 안내에 따라 피로연 회장으로 이동합니다</li>
+                  <li>이 시간에 기념사진 촬영이 진행될 수 있습니다</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">15:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🍽️</span>피로연</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li><strong>이름이 적힌 좌석표</strong>가 있는 자리에 앉아 주세요</li>
+                  <li><strong>코스 요리</strong>가 순서대로 제공됩니다</li>
+                  <li>테이블의 <strong>드링크 메뉴는 무제한</strong>입니다. 스태프에게 자유롭게 주문하세요</li>
+                  <li>알코올·논알코올 모두 준비되어 있습니다</li>
+                  <li>스피치, 여흥 등 다양한 프로그램을 즐겨 주세요</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">18:00</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎊</span>피로연 종료 및 배웅</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>18:00경 피로연이 종료됩니다</li>
+                  <li>출구에서 신랑신부가 배웅할 예정입니다. 말씀 걸어 주세요</li>
+                  <li>답례품（선물）을 가져가시는 것을 잊지 마세요</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="schedule-end-marker">
+        <span class="schedule-icon" style="font-size:1.1rem;">🚌</span>
+        <span class="schedule-end-text">종료 후, <strong>무료 셔틀버스</strong>로 카루이자와역까지 모셔다 드립니다. 출발 시각은 당일 안내해 드립니다.</span>
+      </div>
+    </div>
+
+    <div class="rsvp-section" style="margin-top:60px;">
       <p class="rsvp-text">참석 여부 회신</p>
       <p class="rsvp-date">2026년 7월 22일까지<br>회신 부탁드립니다</p>
     </div>
   </section>
-
-  <!-- ===== ENGLISH ===== -->
   <section id="panel-en" class="content-panel">
     <div class="invitation-block">
       <p class="invitation-text">
@@ -936,7 +1372,149 @@
       </div>
     </div>
 
-    <div class="rsvp-section">
+    <div class="floral-divider" style="margin-top:60px;">✦ ✦ ✦</div>
+
+    <div class="schedule-section">
+      <div class="section-title">
+        <h2>Day's Schedule</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;">Saturday, August 22, 2026</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="schedule-timeline">
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">On arrival</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎩</span>Reception Desk &amp; Gift</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Upon arrival, please head to the <strong>reception counter</strong> near the entrance</li>
+                  <li>Give your name to the staff and present your <strong>monetary gift envelope</strong> (goshugi)</li>
+                  <li>In Japan, wedding gifts are traditionally given as cash in a special envelope, not wrapped presents</li>
+                  <li>Suggested amount: ¥20,000–¥30,000 (for friends / colleagues)</li>
+                  <li>The envelope can be purchased at convenience stores or stationery shops</li>
+                  <li>Write 「寿」 (kotobuki = "congratulations") on the front, and your full name on the back flap</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">Until 14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🥂</span>Welcome Drinks &amp; Waiting Lounge</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>After check-in, please relax in the <strong>waiting lounge</strong></li>
+                  <li>Welcome drinks are provided — sparkling wine, juice, and soft drinks</li>
+                  <li>Feel free to mingle and enjoy until the ceremony begins</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">⛪</span>Move to the Chapel</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>At around 14:20, a <strong>staff member will come to guide you</strong> to the chapel</li>
+                  <li>Please follow their instructions and take your assigned seat inside</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">💒</span>Wedding Ceremony</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>The ceremony will be held in the chapel (approx. 30–40 minutes)</li>
+                  <li>Please remain seated for the duration of the ceremony</li>
+                  <li>Photography guidelines will be given by the staff — please follow their instructions</li>
+                  <li>A group photo session will be held after the ceremony</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">~15:10</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🚶</span>Move to the Reception Venue</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>After the ceremony, staff will guide you to the banquet hall</li>
+                  <li>A photo session may take place during this transition</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">15:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🍽️</span>Wedding Reception (Hiroen)</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Find the seat with your <strong>name card (席札)</strong> and please be seated</li>
+                  <li>A <strong>full-course meal</strong> will be served to your table throughout the reception</li>
+                  <li>The <strong>drink menu on your table is all-inclusive (free-flow)</strong> — feel free to order anything at any time by asking a staff member</li>
+                  <li>Both alcoholic and non-alcoholic options are available</li>
+                  <li>Enjoy speeches, entertainment, and warm celebration throughout the evening</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">18:00</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎊</span>Farewell &amp; Send-off</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>The reception will conclude at approximately 18:00</li>
+                  <li>The couple will be at the exit to see you off — please say hello!</li>
+                  <li>Don't forget to take your <strong>party favour (引き出物)</strong> on your way out</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="schedule-end-marker">
+        <span class="schedule-icon" style="font-size:1.1rem;">🚌</span>
+        <span class="schedule-end-text">After the reception, a <strong>complimentary shuttle bus</strong> will take you back to Karuizawa Station. Departure times will be announced on the day.</span>
+      </div>
+    </div>
+
+    <div class="rsvp-section" style="margin-top:60px;">
       <p class="rsvp-text">Kindly Reply By</p>
       <p class="rsvp-date">July 22, 2026</p>
     </div>
@@ -1072,7 +1650,149 @@
       </div>
     </div>
 
-    <div class="rsvp-section">
+    <div class="floral-divider" style="margin-top:60px;">✦ ✦ ✦</div>
+
+    <div class="schedule-section">
+      <div class="section-title">
+        <h2>Tagesablauf</h2>
+        <p style="font-size:0.82rem;color:var(--ink-soft);margin-top:8px;">Samstag, 22. August 2026</p>
+        <div class="section-title-line" style="margin-top:12px;"></div>
+      </div>
+
+      <div class="schedule-timeline">
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">Bei Ankunft</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎩</span>Empfangsschalter &amp; Geldgeschenk</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Bitte begeben Sie sich nach der Ankunft zum <strong>Empfangsschalter</strong> am Eingang</li>
+                  <li>Nennen Sie Ihren Namen und überreichen Sie das <strong>Geldgeschenk-Kuvert (Goshugi)</strong></li>
+                  <li>In Japan ist es Tradition, Hochzeitsgeschenke als Bargeld in einem speziellen Umschlag zu überreichen – keine Sachgeschenke</li>
+                  <li>Empfohlener Betrag: ¥20.000–¥30.000 (für Freunde / Kollegen)</li>
+                  <li>Den Umschlag erhalten Sie im Convenience-Store oder Schreibwarenhandel</li>
+                  <li>Schreiben Sie 「寿」 (Kotobuki = „Glückwunsch") auf die Vorderseite und Ihren Namen auf die Rückseite</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">Bis 14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🥂</span>Willkommensgetränke &amp; Wartebereich</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Nach dem Empfang dürfen Sie sich im <strong>Wartebereich</strong> entspannen</li>
+                  <li>Willkommensgetränke werden gereicht: Sekt, Säfte und Softdrinks</li>
+                  <li>Genießen Sie die Zeit bis zum Beginn der Zeremonie</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:20</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">⛪</span>Begleitung zur Kapelle</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Gegen 14:20 Uhr wird <strong>ein Mitarbeiter Sie persönlich begleiten</strong></li>
+                  <li>Bitte folgen Sie den Anweisungen und nehmen Sie Ihren zugewiesenen Platz ein</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">14:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">💒</span>Trauungszeremonie</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Die Zeremonie findet in der Kapelle statt (ca. 30–40 Minuten)</li>
+                  <li>Bitte bleiben Sie während der gesamten Zeremonie auf Ihrem Platz</li>
+                  <li>Hinweise zur Fotografie werden vom Personal gegeben — bitte folgen Sie diesen</li>
+                  <li>Im Anschluss findet eine Fotosession mit den Gästen statt</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time-col"><span class="schedule-time">~15:10</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🚶</span>Umzug in den Festsaal</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Nach der Zeremonie werden Sie vom Personal in den Bankettsaal geleitet</li>
+                  <li>Während dieser Zeit kann eine Fotosession stattfinden</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">15:30</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🍽️</span>Hochzeitsempfang (Hiroen)</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Nehmen Sie bitte den Platz mit Ihrer <strong>Tischkarte (席札)</strong> ein</li>
+                  <li>Ein <strong>mehrgängiges Menü</strong> wird Ihnen an den Tisch serviert</li>
+                  <li>Die <strong>Getränkekarte auf Ihrem Tisch ist inklusive (Free-Flow)</strong> — bestellen Sie jederzeit beim Personal</li>
+                  <li>Alkoholische und alkoholfreie Getränke stehen zur Auswahl</li>
+                  <li>Genießen Sie Reden, Unterhaltung und die festliche Atmosphäre</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item is-highlight">
+          <div class="schedule-time-col"><span class="schedule-time">18:00</span></div>
+          <div class="schedule-dot-col"><div class="schedule-dot highlight"></div></div>
+          <div class="schedule-content">
+            <div class="schedule-content-inner">
+              <p class="schedule-event-title"><span class="schedule-icon">🎊</span>Verabschiedung</p>
+              <div class="schedule-event-desc">
+                <ul>
+                  <li>Der Empfang endet gegen 18:00 Uhr</li>
+                  <li>Das Brautpaar verabschiedet die Gäste am Ausgang — bitte sprechen Sie die beiden an!</li>
+                  <li>Vergessen Sie nicht, Ihr <strong>Gastgeschenk (引き出物)</strong> mitzunehmen</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="schedule-end-marker">
+        <span class="schedule-icon" style="font-size:1.1rem;">🚌</span>
+        <span class="schedule-end-text">Nach dem Empfang bringt Sie ein <strong>kostenloser Shuttle-Bus</strong> zurück zum Bahnhof Karuizawa. Die Abfahrtszeiten werden am Veranstaltungstag bekanntgegeben.</span>
+      </div>
+    </div>
+
+    <div class="rsvp-section" style="margin-top:60px;">
       <p class="rsvp-text">Bitte antworten bis</p>
       <p class="rsvp-date">22. Juli 2026</p>
     </div>
